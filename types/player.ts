@@ -53,3 +53,7 @@ export type PlayerProps = {
   draftClub: string;
   draftNumber: number;
 };
+
+export type Roster = {
+  [key in PlayerPosition]: PlayerProps['playerId'][];
+};

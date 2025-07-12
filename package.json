@@ -26,7 +26,8 @@
     "rsc": "link:@trpc/react-query/rsc",
     "superjson": "^2.2.2",
     "tailwind-merge": "^3.3.1",
-    "zod": "^4.0.5"
+    "zod": "^4.0.5",
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@biomejs/biome": "2.0.6",

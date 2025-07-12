@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { PlayerPosition } from '@/types/player';
+import { TotalPlayers } from '../player/total-players';
 
 const Positions: {
   label: PlayerPosition;
@@ -58,13 +59,14 @@ export function TopMenu() {
         {Positions.map((position) => (
           <Link
             className="font-extrabold text-bold text-gray-500 text-xl hover:text-gray-700"
-            href={`#${position.value}`}
+            href={`/${position.value}`}
             key={position.value}
           >
             {position.label}
           </Link>
         ))}
       </div>
+      <TotalPlayers />
     </nav>
   );
 }
