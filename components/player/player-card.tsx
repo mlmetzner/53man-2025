@@ -25,7 +25,7 @@ export function PlayerCard({
             alt={`${firstName} ${lastName}'s headshot`}
             className="rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
             height={120}
-            src={headshotUrl}
+            src={headshotUrl ?? '/placeholder.png'}
             width={120}
           />
         </div>

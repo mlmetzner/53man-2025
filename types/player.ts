@@ -45,7 +45,7 @@ export type PlayerProps = {
   height: number;
   weight: number;
   college: string;
-  headshotUrl: string;
+  headshotUrl: string | undefined;
   playerId: string;
   yearsExp: number;
   entryYear: number;
