@@ -1,4 +1,4 @@
-type Position =
+export type PlayerPosition =
   | 'DB'
   | 'DL'
   | 'K'
@@ -34,7 +34,7 @@ type PlayerStatus = 'ACT' | 'CUT' | 'E14' | 'RES' | 'U01';
 
 export type PlayerProps = {
   team: string;
-  position: Position;
+  position: PlayerPosition;
   depthChartPosition: DepthChartPosition;
   jerseyNumber: number;
   status: PlayerStatus;
