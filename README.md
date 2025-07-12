@@ -26,4 +26,12 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## How to plan your Roster?
 
 1. Select Players for every Postion Group (You can just click on players to )
-2. You can see the total number of players 
+2. You can see the total number of players in the upper right corner
+3. Once you are finished, you can view your team in the depth chart 
+
+
+## ToDos
+
+1. Use a Database for Data, automatically update the Rosters
+2. Use Depth-Chart Positions for the Players on the Depth Chart
+3. Allow Players to be moved on the Depth-Chart
