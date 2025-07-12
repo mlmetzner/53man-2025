@@ -28,8 +28,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} flex flex-col gap-4 antialiased`}
       >
-        <TopMenu />
-        {children}
+        <div className="grid grid-rows-[60px_1fr_20px] items-center justify-items-center gap-8 font-[family-name:var(--font-geist-sans)] ">
+          <TopMenu />
+          {children}
+        </div>
       </body>
     </html>
   );

@@ -13,6 +13,7 @@
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
     "@radix-ui/react-aspect-ratio": "^1.1.7",
+    "@radix-ui/react-dialog": "^1.1.14",
     "@tanstack/react-query": "^5.83.0",
     "@trpc/client": "^11.4.3",
     "@trpc/react-query": "^11.4.3",
@@ -26,6 +27,7 @@
     "rsc": "link:@trpc/react-query/rsc",
     "superjson": "^2.2.2",
     "tailwind-merge": "^3.3.1",
+    "vaul": "^1.1.2",
     "zod": "^4.0.5",
     "zustand": "^5.0.6"
   },
