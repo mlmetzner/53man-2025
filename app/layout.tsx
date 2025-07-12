@@ -26,11 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex flex-col gap-4 antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <div className="grid grid-rows-[60px_1fr_20px] items-center justify-items-center gap-8 font-[family-name:var(--font-geist-sans)] ">
+        <div className="mx-auto flex min-h-screen max-w-screen-2xl flex-col font-[family-name:var(--font-geist-sans)]">
           <TopMenu />
-          {children}
+          <main className="flex-1 px-4 py-6 md:px-8">{children}</main>
         </div>
       </body>
     </html>

@@ -14,24 +14,33 @@ export function PositionGroup({
   const roster = useRoster();
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      <h2 className="font-bold text-2xl">{position} On Roster</h2>
-      <div className="grid min-h-72 w-full min-w-0 max-w-svw grid-cols-1 flex-row flex-wrap gap-4 md:flex">
-        {roster[position]
-          .map((playerId) =>
-            players.find((player) => player.playerId === playerId)
-          )
-          .map((player) =>
-            player ? <PlayerCard key={player.playerId} {...player} /> : null
-          )}
+    <div className="flex flex-col gap-6 md:gap-8">
+      <h2 className="text-center font-bold text-xl md:text-2xl">
+        {position} On Roster
+      </h2>
+      <div className="w-full">
+        <div className="grid grid-cols-1 justify-center gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+          {roster[position]
+            .map((playerId) =>
+              players.find((player) => player.playerId === playerId)
+            )
+            .map((player) =>
+              player ? <PlayerCard key={player.playerId} {...player} /> : null
+            )}
+        </div>
       </div>
-      <h2 className="font-bold text-2xl">{position} Available / Will Be Cut</h2>
-      <div className="flex flex-row flex-wrap gap-4">
-        {players
-          .filter((player) => !roster[position].includes(player.playerId))
-          .map((player) => (
-            <PlayerCard key={player.playerId} {...player} />
-          ))}
+
+      <h2 className="mt-4 text-center font-bold text-xl md:text-2xl">
+        {position} Available / Will Be Cut
+      </h2>
+      <div className="w-full">
+        <div className="grid grid-cols-1 justify-center gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+          {players
+            .filter((player) => !roster[position].includes(player.playerId))
+            .map((player) => (
+              <PlayerCard key={player.playerId} {...player} />
+            ))}
+        </div>
       </div>
     </div>
   );

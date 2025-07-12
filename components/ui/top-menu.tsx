@@ -66,50 +66,14 @@ export const Positions: {
 export function TopMenu() {
   const pathname = usePathname();
   return (
-    <nav className="flex w-full flex-wrap items-center justify-between bg-black p-4">
-      <div className="mx-auto hidden items-center gap-4 md:flex">
-        {Positions.map((position) => (
-          <Link
-            className={`font-extrabold text-bold text-gray-500 text-xl hover:text-gray-700 ${
-              pathname === `/${position.value}` ? 'text-jax-teal' : ''
-            }`}
-            href={`/${position.value}`}
-            key={position.value}
-          >
-            {position.label}
-          </Link>
-        ))}
-        <Link
-          className={`font-extrabold text-bold text-gray-500 text-xl hover:text-gray-700 ${
-            pathname === '/depth-chart' ? 'text-jax-teal' : ''
-          }`}
-          href="/depth-chart"
-        >
-          Depth Chart
-        </Link>
-      </div>
-      <TotalPlayers />
-
-      <MobileMenu activePosition={pathname} />
-    </nav>
-  );
-}
-
-export function MobileMenu({ activePosition }: { activePosition: string }) {
-  return (
-    <Drawer>
-      <DrawerTrigger className="flex flex-row items-center gap-4 md:hidden">
-        <MenuIcon className="h-6 w-6 text-gray-500" />
-      </DrawerTrigger>
-      <DrawerContent>
-        <DrawerHeader>
-          <DrawerTitle>Menu</DrawerTitle>
-        </DrawerHeader>
-        <div className="flex flex-col gap-4 p-4 text-center">
+    <nav className="sticky top-0 z-50 flex w-full items-center justify-between bg-black p-4 shadow-lg">
+      <div className="flex items-center gap-4">
+        <MobileMenu activePosition={pathname} />
+        <div className="hidden items-center gap-4 md:flex">
           {Positions.map((position) => (
             <Link
-              className={`font-extrabold text-bold text-gray-500 text-xl transition-all duration-300 hover:cursor-pointer hover:text-gray-700 ${
-                activePosition === `/${position.value}` ? 'text-jax-teal' : ''
+              className={`font-extrabold text-gray-500 text-lg transition-colors hover:text-gray-300 ${
+                pathname === `/${position.value}` ? 'text-jax-teal' : ''
               }`}
               href={`/${position.value}`}
               key={position.value}
@@ -118,13 +82,68 @@ export function MobileMenu({ activePosition }: { activePosition: string }) {
             </Link>
           ))}
           <Link
-            className={`font-extrabold text-bold text-gray-500 text-xl transition-all duration-300 hover:cursor-pointer hover:text-gray-700 ${
-              activePosition === '/depth-chart' ? 'text-jax-teal' : ''
+            className={`font-extrabold text-gray-500 text-lg transition-colors hover:text-gray-300 ${
+              pathname === '/depth-chart' ? 'text-jax-teal' : ''
             }`}
             href="/depth-chart"
           >
             Depth Chart
           </Link>
+        </div>
+      </div>
+
+      <TotalPlayers />
+    </nav>
+  );
+}
+
+export function MobileMenu({ activePosition }: { activePosition: string }) {
+  return (
+    <Drawer>
+      <DrawerTrigger className="flex items-center gap-2 rounded-lg p-2 transition-colors hover:bg-gray-800 md:hidden">
+        <MenuIcon className="h-6 w-6 text-gray-300" />
+        <span className="font-bold text-gray-300 text-sm">Menu</span>
+      </DrawerTrigger>
+      <DrawerContent className="max-h-[80vh]">
+        <DrawerHeader className="border-gray-700 border-b text-center">
+          <DrawerTitle className="font-bold text-gray-100 text-xl">
+            Navigation
+          </DrawerTitle>
+        </DrawerHeader>
+        <div className="flex flex-col gap-3 overflow-y-auto p-6">
+          <div className="mb-4">
+            <h3 className="mb-3 font-semibold text-gray-400 text-sm uppercase tracking-wider">
+              Positions
+            </h3>
+            <div className="grid grid-cols-2 gap-3">
+              {Positions.map((position) => (
+                <Link
+                  className={`flex items-center justify-center rounded-lg px-4 py-3 font-bold text-lg transition-all duration-200 hover:scale-105 ${
+                    activePosition === `/${position.value}`
+                      ? 'bg-jax-teal text-black shadow-lg'
+                      : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                  }`}
+                  href={`/${position.value}`}
+                  key={position.value}
+                >
+                  {position.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="border-gray-700 border-t pt-4">
+            <Link
+              className={`flex items-center justify-center rounded-lg px-6 py-4 font-bold text-lg transition-all duration-200 hover:scale-105 ${
+                activePosition === '/depth-chart'
+                  ? 'bg-jax-teal text-black shadow-lg'
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+              }`}
+              href="/depth-chart"
+            >
+              Depth Chart
+            </Link>
+          </div>
         </div>
       </DrawerContent>
     </Drawer>
