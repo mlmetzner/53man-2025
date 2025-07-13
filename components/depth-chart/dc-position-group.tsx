@@ -1,4 +1,4 @@
-import { useRoster, useRosterActions } from '@/stores/rosterStore';
+import { useRoster, useRosterActions } from '@/stores/roster-store';
 import type { DepthChartPosition, PlayerProps } from '@/types/player';
 import { DcPlayer } from './dc-player';
 

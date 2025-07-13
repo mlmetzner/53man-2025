@@ -1,4 +1,4 @@
-import { useRoster, useRosterActions } from '@/stores/rosterStore';
+import { useRoster, useRosterActions } from '@/stores/roster-store';
 import type { PlayerProps } from '@/types/player';
 import { BackgroundEffect } from './backgorund-effect';
 import { JerseyNumber } from './jersey-number';

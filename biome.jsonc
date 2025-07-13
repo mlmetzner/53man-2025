@@ -1,6 +1,20 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.0.6/schema.json",
-  "extends": [
-    "ultracite"
-  ]
+  "files": {
+    "ignoreUnknown": true,
+    "includes": [
+      "**/*.ts",
+      "**/*.tsx",
+      "**/*.js",
+      "**/*.jsx",
+      "**/*.json",
+      "!node_modules",
+      "!dist",
+      "!build",
+      "!public",
+      "!public/assets",
+      "!app/globals.css"
+    ]
+  },
+  "extends": ["ultracite"]
 }

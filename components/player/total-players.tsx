@@ -1,7 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { useTotalPlayers } from '@/stores/rosterStore';
+import { useTotalPlayers } from '@/stores/roster-store';
 
 export function TotalPlayers() {
   const totalPlayers = useTotalPlayers();

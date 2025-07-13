@@ -1,6 +1,6 @@
 'use client';
 
-import { useRoster } from '@/stores/rosterStore';
+import { useRoster } from '@/stores/roster-store';
 import type { PlayerPosition, PlayerProps } from '@/types/player';
 import { PlayerCard } from './player-card';
 

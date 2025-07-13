@@ -1,6 +1,6 @@
 'use client';
 
-import { useRoster } from '@/stores/rosterStore';
+import { useRoster } from '@/stores/roster-store';
 import type {
   DepthChartPosition,
   PlayerPosition,
