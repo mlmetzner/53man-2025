@@ -1,6 +1,6 @@
 import type { PlayerPosition } from '@/types/player';
 
-export const Positions: {
+export const positions: {
   label: PlayerPosition;
   value: string;
 }[] = [
@@ -51,21 +51,21 @@ export const Positions: {
 ];
 
 export function getNextPosition(currentPosition: PlayerPosition) {
-  const currentIndex = Positions.findIndex(
+  const currentIndex = positions.findIndex(
     (position) => position.value === currentPosition
   );
-  if (currentIndex === Positions.length - 1) {
+  if (currentIndex === positions.length - 1) {
     return 'depth-chart';
   }
-  return Positions[currentIndex + 1].value;
+  return positions[currentIndex + 1].value;
 }
 
 export function getPreviousPosition(currentPosition: PlayerPosition) {
-  const currentIndex = Positions.findIndex(
+  const currentIndex = positions.findIndex(
     (position) => position.value === currentPosition
   );
   if (currentIndex === 0) {
     return null;
   }
-  return Positions[currentIndex - 1].value;
+  return positions[currentIndex - 1].value;
 }

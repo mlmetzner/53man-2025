@@ -3,7 +3,7 @@
 import { MenuIcon } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Positions } from '@/helpers/postions';
+import { positions } from '@/helpers/postions';
 import { TotalPlayers } from '../player/total-players';
 import {
   Drawer,
@@ -20,7 +20,7 @@ export function TopMenu() {
       <div className="flex items-center gap-4">
         <MobileMenu activePosition={pathname} />
         <div className="hidden items-center gap-4 md:flex">
-          {Positions.map((position) => (
+          {positions.map((position) => (
             <Link
               className={`font-extrabold text-gray-500 text-lg transition-colors hover:text-gray-300 ${
                 pathname === `/${position.value}` ? 'text-jax-teal' : ''
@@ -66,7 +66,7 @@ export function MobileMenu({ activePosition }: { activePosition: string }) {
               Positions
             </h3>
             <div className="grid grid-cols-2 gap-3">
-              {Positions.map((position) => (
+              {positions.map((position) => (
                 <Link
                   className={`flex items-center justify-center rounded-lg px-4 py-3 font-bold text-lg transition-all duration-200 hover:scale-105 ${
                     activePosition === `/${position.value}`

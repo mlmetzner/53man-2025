@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { PositionGroup } from '@/components/player/position-group';
 import { NavButtons } from '@/components/ui/nav-buttons';
+import { positions } from '@/helpers/postions';
 import { api } from '@/trpc/server';
 import type { PlayerPosition } from '@/types/player';
 
@@ -10,6 +11,9 @@ export default async function Home({
   params: Promise<{ pos: PlayerPosition }>;
 }) {
   const { pos } = await params;
+  if (!positions.some((position) => position.value === pos)) {
+    notFound();
+  }
 
   const players = await api.players.getPlayersByPosition(pos);
   if (!players) {
