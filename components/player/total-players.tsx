@@ -1,5 +1,6 @@
 'use client';
 
+import { cn } from '@/lib/utils';
 import { useTotalPlayers } from '@/stores/rosterStore';
 
 export function TotalPlayers() {
@@ -12,5 +13,9 @@ export function TotalPlayers() {
     totalPlayersClass = 'text-green-500';
   }
 
-  return <div className={totalPlayersClass}>Total Players: {totalPlayers}</div>;
+  return (
+    <div className={cn(totalPlayersClass, 'font-bold')}>
+      Total Players: {totalPlayers}
+    </div>
+  );
 }

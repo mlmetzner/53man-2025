@@ -15,9 +15,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Tech Stack
 
 - NextJS (App-Router) with Typescript
-- Styling with Tailwind and Shadcn-UI
+    
+- Styling with TailwindCSS and shadcn/ui
+    - basic storybook to play around with the player card
 - TRPC for typesafe Backend-Communication (for the sake of demonstration, the data is just pulled from a json. So this can be simply run)
-- Zustand for Statemanagement with persist-middleware to keep the state. In case of reloads or something
+- Zustand for State-Management
+    - [Zustand Best Practises] (https://www.youtube.com/watch?v=6tEQ1nJZ51w)
+    - useShallow to avoid rerenders 
+    - persist-middleware to keep the data in localStorage 
 - biome/ultracite for linting and formatting (My Laptop is to slow for eslint)
 
 

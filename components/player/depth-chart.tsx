@@ -5,7 +5,6 @@ import type { PlayerPosition, PlayerProps } from '@/types/player';
 
 export function DepthChart({ players }: { players: PlayerProps[] }) {
   const roster = useRoster();
-
   return (
     <div className="mx-auto w-full max-w-7xl space-y-6">
       <h1 className="text-center font-bold text-2xl md:text-4xl">

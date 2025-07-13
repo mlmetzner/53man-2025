@@ -3,7 +3,7 @@
 import { MenuIcon } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import type { PlayerPosition } from '@/types/player';
+import { Positions } from '@/helpers/postions';
 import { TotalPlayers } from '../player/total-players';
 import {
   Drawer,
@@ -12,56 +12,6 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from './drawer';
-
-export const Positions: {
-  label: PlayerPosition;
-  value: string;
-}[] = [
-  {
-    label: 'DB',
-    value: 'DB',
-  },
-  {
-    label: 'DL',
-    value: 'DL',
-  },
-  {
-    label: 'K',
-    value: 'K',
-  },
-  {
-    label: 'LB',
-    value: 'LB',
-  },
-  {
-    label: 'LS',
-    value: 'LS',
-  },
-  {
-    label: 'OL',
-    value: 'OL',
-  },
-  {
-    label: 'P',
-    value: 'P',
-  },
-  {
-    label: 'QB',
-    value: 'QB',
-  },
-  {
-    label: 'RB',
-    value: 'RB',
-  },
-  {
-    label: 'TE',
-    value: 'TE',
-  },
-  {
-    label: 'WR',
-    value: 'WR',
-  },
-];
 
 export function TopMenu() {
   const pathname = usePathname();

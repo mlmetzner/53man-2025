@@ -30,7 +30,13 @@ export default function RootLayout({
       >
         <div className="mx-auto flex min-h-screen max-w-screen-2xl flex-col font-[family-name:var(--font-geist-sans)]">
           <TopMenu />
-          <main className="flex-1 px-4 py-6 md:px-8">{children}</main>
+          <main className=" flex-1 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 px-4 py-6 md:px-8">
+            <p className="mb-4 text-center text-white text-xs md:text-base">
+              Click on a player to add or remove them. Players with a red border
+              are not on the roster.
+            </p>
+            {children}
+          </main>
         </div>
       </body>
     </html>
