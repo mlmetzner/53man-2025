@@ -5,7 +5,7 @@ import { positions } from '@/helpers/postions';
 import { api } from '@/trpc/server';
 import type { PlayerPosition } from '@/types/player';
 
-export default async function Home({
+export default async function PositionPage({
   params,
 }: {
   params: Promise<{ pos: PlayerPosition }>;

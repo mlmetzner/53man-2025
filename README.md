@@ -15,7 +15,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Tech Stack
 
 - NextJS (App-Router) with Typescript
-    
+
 - Styling with TailwindCSS and shadcn/ui
     - basic storybook to play around with the player card
 - TRPC for typesafe Backend-Communication (for the sake of demonstration, the data is just pulled from a json. So this can be simply run)
@@ -38,5 +38,4 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## ToDos
 
 1. Use a Database for Data, automatically update the Rosters
-2. Use Depth-Chart Positions for the Players on the Depth Chart
-3. Allow Players to be moved on the Depth-Chart
+2. Add Headshots/Birthdays of Rookies
