@@ -11,7 +11,7 @@ export type PlayerPosition =
   | 'TE'
   | 'WR';
 
-type DepthChartPosition =
+export type DepthChartPosition =
   | 'C'
   | 'CB'
   | 'DE'
@@ -55,5 +55,9 @@ export type PlayerProps = {
 };
 
 export type Roster = {
-  [key in PlayerPosition]: PlayerProps['playerId'][];
+  [key in PlayerPosition]: {
+    playerId: PlayerProps['playerId'];
+    depthChartPosition: PlayerProps['depthChartPosition'];
+    depthChartValue: number;
+  }[];
 };

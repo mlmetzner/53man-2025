@@ -21,8 +21,10 @@ export function PositionGroup({
       <section className="w-full ">
         <div className="grid w-full grid-cols-1 place-items-center justify-center gap-4 align-center sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
           {roster[position]
-            .map((playerId) =>
-              players.find((player) => player.playerId === playerId)
+            .map((rosterPlayer) =>
+              players.find(
+                (player) => player.playerId === rosterPlayer.playerId
+              )
             )
             .map((player) =>
               player ? <PlayerCard key={player.playerId} {...player} /> : null
@@ -35,7 +37,12 @@ export function PositionGroup({
       </h2>
       <section className="grid grid-cols-1 place-items-center justify-center gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
         {players
-          .filter((player) => !roster[position].includes(player.playerId))
+          .filter(
+            (player) =>
+              !roster[position].some(
+                (rosterPlayer) => rosterPlayer.playerId === player.playerId
+              )
+          )
           .map((player) => (
             <PlayerCard key={player.playerId} {...player} />
           ))}

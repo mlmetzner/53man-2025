@@ -18,12 +18,14 @@ export function PlayerCard({
   const roster = useRoster();
   const { addPlayer, removePlayer } = useRosterActions();
 
-  const isOnRoster = roster[position].some((player) => player === playerId);
+  const isOnRoster = roster[position].some(
+    (player) => player.playerId === playerId
+  );
   const handleClick = () => {
     if (isOnRoster) {
-      removePlayer(playerId, position);
+      removePlayer(playerId, position, depthChartPosition);
     } else {
-      addPlayer(playerId, position);
+      addPlayer(playerId, position, depthChartPosition);
     }
   };
 

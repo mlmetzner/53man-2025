@@ -1,4 +1,4 @@
-import { DepthChart } from '@/components/player/depth-chart';
+import { DepthChart } from '@/components/depth-chart/depth-chart';
 import { api } from '@/trpc/server';
 
 export default async function DepthChartPage() {
